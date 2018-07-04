@@ -1,0 +1,119 @@
+:root {
+    --box-size: 10px;
+}
+html, body {
+    height: 100%;
+}
+.wrap {
+    height: 100%;
+    background-color: rgb(245, 245, 245);
+    /* 모션 이미지는 배경으로 임시 사용 */
+    /* background: rgb(245, 245, 245) url(menu_by_volorf.gif) center no-repeat; */
+}
+
+.btn_outline {
+    overflow: hidden;
+    position: absolute;
+    top: 46%;
+    left: 31.2%;
+    width: 188px;
+    height: 92px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 20% / 50%;
+    transform-origin: 0 50% 0;
+    transition: transform .2s ease-in;
+}
+.btn_outline.action {
+    /* keyframe 에서 transition 으로 수정 */
+    /* animation-duration: 0.6s;
+    animation-name: btnmotion;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+    animation-iteration-count: 1; */
+    /* transform: rotate(5deg); */
+    transform: rotate(5deg);
+}
+.text_list {
+    position: absolute;
+    top: 47px;
+    left: -13px;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    background-color:red;
+    transition: transform 0.2s ease-in;
+}
+.text_list li {
+    position: absolute;
+    width: auto;
+    font-size: 30px;
+    font-weight: 500;
+    list-style-type: none;
+    transform-origin: 0 0 0;
+}
+.text_list li:nth-of-type(1) {
+    transform: rotateZ(0deg) translateY(-50%) translateX(40px);
+}
+.text_list li:nth-of-type(2) {
+    transform: rotateZ(90deg) translateY(-50%) translateX(40px);
+}
+.text_list li:nth-of-type(3) {
+    transform: rotateZ(180deg) translateY(-50%) translateX(40px);
+}
+.text_list li:nth-of-type(4) {
+    transform: rotateZ(270deg) translateY(-50%) translateX(40px);
+}
+
+.btn_list {
+    position: absolute;
+    top: 33px;
+    right: 25px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.btn_list:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    width: var(--box-size);
+    height: var(--box-size);
+    border: 2px solid black;
+    border-top-width: 0;
+    border-left-width: 0;
+    transform: rotateZ(45deg);
+}
+.btn_list .cycle {
+    position: absolute;
+    /* display: block; */
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 3px solid rgba(255, 0, 0, 0);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    transition: all .1s ease-in;
+}
+.cycle.active {
+    width: 30px;
+    height: 30px;
+    border: 20px solid rgba(0, 0, 0, 0.1)
+}
+
+/* @keyframes btnmotion {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+} */
+
